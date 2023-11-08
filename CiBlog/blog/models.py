@@ -17,3 +17,12 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name="blog_likes", blank=True)
+    
+    class Meta:
+        ordering = ["-created_on"]
+    
+    def __str__(self):
+        return f"{self.title}"
+    
+    def number_of_likes(self):
+        return self.likes.count()
