@@ -12,4 +12,4 @@ class PostList(generic.ListView):
     context = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "blog/blog.html"
     paginate_by = 6
-    context_object_name = "postList"
+    context_object_name = "posts"
