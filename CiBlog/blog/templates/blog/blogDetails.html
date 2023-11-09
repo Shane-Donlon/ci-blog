@@ -1,12 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
-{% block cssFiels %}
+s
+{% block cssFiles %}
     <link rel="stylesheet" href="{% static "blog/blog.css" %}">
-{% endblock cssFiels %}
+{% endblock cssFiles %}
 {% block content %}
     <div class="card">
+        {% if "placeholder" in post.featured_image.url %}
+            <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
+                 alt="person typing code on a laptop"
+                 class="card-img-top"
+                 width="100px"
+                 height="100px">
+        {% else %}
+            <img src="{{ post.featured_image.url }}" alt="" class="card-img-top">
+        {% endif %}
+
         <div class="card-body">
             <h2 class="post-h2">{{ post.title |capfirst }}</h2>
+            <h3>Author: {{ post.author }}</h3>
+            <p>{{ post.content | striptags }}</p>
+            {% for comment in comments %}
+                <div class="comments-box">
+                    <p class="comment">{{ comment.body }}</p>
+                    <div class="comment-by">{{ comment.name }}</div>
+                </div>
+            {% endfor %}
+            {% if liked == False %}
+                <i class="far fa-heart"></i>
+            {% else %}
+                <i class="far fa-heart fillHeart"></i>
+            {% endif %}
         </div>
     </div>
 {% endblock content %}
