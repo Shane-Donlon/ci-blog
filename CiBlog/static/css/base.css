@@ -40,7 +40,7 @@ body {
 
 .image-flash {
   position: absolute;
-  bottom: 100px;
+  top: 65%;
   background-color: #23bbbb;
 }
 

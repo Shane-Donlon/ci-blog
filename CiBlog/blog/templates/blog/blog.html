@@ -10,6 +10,7 @@
             <div class="col-12 mt-3 left">
                 <div class="row">
                     {% for post in posts %}
+                        <p>{{ post.status }}</p>
                         <div class="col-md-4">
                             <div class="card mb-4">
                                 <div class="card-body">
@@ -23,7 +24,7 @@
                                     <div class="image-flash">
                                         <p class="author">Written By: {{ post.author }}</p>
                                     </div>
-                                    <a href="{% url "post" post.id %}">
+                                    <a href="{% url "post" post.slug %}">
                                         <h2 class"card-title">{{ post.title }}</h2>
                                         <p class="card-text text-muted h6">
                                             {{ post.created_on | date:"d/m/y G:i" }}

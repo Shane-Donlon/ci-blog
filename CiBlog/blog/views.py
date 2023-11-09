@@ -8,17 +8,23 @@ def testing(request):
     """testing static dirs setup correctly"""
     return render(request, "blog/blog.html")
 
-class PostList(generic.ListView):
-    model = Post
-    context = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "blog/blog.html"
-    paginate_by = 6
-    context_object_name = "posts"
+class PostList(View):
+    def get(self, request, *args, **kwargs):
+        queryset = Post.objects.filter(status=1).order_by("-created_on")
+        context = {"posts": queryset}
+        return render(request, "blog/blog.html", context)
     
 
-class PostDetails(DetailView):
-    model = Post
-    pk_url_kwarg = "postPk"
-    template_name = "blog/blogDetails.html"
-    context_object_name = "posts"
+class PostDetail(View):
+    def get(self, request, postSlug,*args, **kwargs, ):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug = postSlug)
+        comments = post.comments.filter(approved=True).order_by("created_on")
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+        context = {"post": post,
+                   "comments": comments,
+                   "liked": liked}
+        return render(request, "blog/blogDetails.html", context)
     

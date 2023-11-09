@@ -4,7 +4,11 @@
     <link rel="stylesheet" href="{% static "blog/blog.css" %}">
 {% endblock cssFiels %}
 {% block content %}
-    {{ posts.author }}
+    <div class="card">
+        <div class="card-body">
+            <h2 class="post-h2">{{ post.title |capfirst }}</h2>
+        </div>
+    </div>
 {% endblock content %}
 {% block JSFiles %}
     <script src="{% static "blog/blog.js" %}"></script>
