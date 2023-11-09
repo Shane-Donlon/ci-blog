@@ -26,7 +26,7 @@
                                     <a href="{% url "post" post.id %}">
                                         <h2 class"card-title">{{ post.title }}</h2>
                                         <p class="card-text text-muted h6">
-                                            {{ post.created_on }}
+                                            {{ post.created_on | date:"d/m/y G:i" }}
                                             <i class="far fa-heart">{{ post.likes }}</i>
                                         </p>
                                     </a>
