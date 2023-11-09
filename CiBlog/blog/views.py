@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
+from django.views.generic import DetailView
 from .models import Post
 
 # Create your views here.
@@ -13,3 +14,11 @@ class PostList(generic.ListView):
     template_name = "blog/blog.html"
     paginate_by = 6
     context_object_name = "posts"
+    
+
+class PostDetails(DetailView):
+    model = Post
+    pk_url_kwarg = "postPk"
+    template_name = "blog/blogDetails.html"
+    context_object_name = "posts"
+    
