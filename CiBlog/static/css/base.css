@@ -138,3 +138,93 @@ body {
   background: transparent;
   border: none;
 }
+
+/* Login form css selector without having to change the HTML for all forms */
+/* form[action*="accounts/login"] {
+  border: 2px solid black;
+  border-radius: 10px;
+  max-width: 500px;
+  margin-inline: auto;
+  display: grid;
+  padding: 2rem;
+  accent-color: red;
+  justify-content: stretch;
+  align-items: center;
+}
+
+form[action*="accounts/login"] > button {
+  justify-self: end;
+  padding: 1rem 3rem;
+  border-radius: 100vmax;
+  background-color: black;
+  color: white;
+}
+
+form[action*="accounts/login"] > p:nth-child(2) {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+form[action*="accounts/login"] > p:nth-child(3) {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+form[action*="accounts/login"] > p:nth-child(3) > input,
+form[action*="accounts/login"] > p:nth-child(3) > input::placeholder {
+  background-color: red;
+  color: white;
+  justify-self: end;
+}
+
+form[action*="accounts/login"] > p > input {
+  width: 200px;
+  max-width: 280px;
+} */
+
+.content-wrapper {
+  margin-inline: auto;
+  max-width: 500px;
+}
+
+form[action*="accounts/login"] {
+  display: grid;
+  max-width: 500px;
+  margin-inline: auto;
+  border: 2px solid black;
+  padding: 2rem;
+  border-radius: 10px;
+}
+form[action*="accounts/login"] button {
+  justify-self: end;
+  background-color: black;
+  color: white;
+  padding: 1em 3em;
+  border-radius: 100vmax;
+}
+form[action*="accounts/login"] p {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+form[action*="accounts/login"] .helptext {
+  margin-top: 0.5rem;
+  justify-self: start;
+  grid-column: -2/-1;
+}
+form[action*="accounts/login"] .helptext > a {
+  color: black;
+  text-decoration-color: #c70000;
+  text-underline-offset: 5px;
+}
+
+form[action*="accounts/login"] input,
+form[action*="accounts/login"] input::placeholder {
+  background-color: #fafafa;
+}
+
+form[action*="accounts/login"] > p:nth-child(4) > input[type="checkbox"] {
+  justify-self: start;
+  accent-color: red;
+}
