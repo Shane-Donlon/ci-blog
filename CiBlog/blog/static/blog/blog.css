@@ -6,3 +6,9 @@
   width: 100px;
   height: 100px;
 }
+
+.comment-form {
+  display: grid;
+  max-width: 500px;
+  margin-left: auto;
+}
