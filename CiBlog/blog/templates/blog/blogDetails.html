@@ -24,6 +24,7 @@
                     <p>your comment is pending approval</p>
                     <a href="{% url "index" %}">Click to go home</a>
                 {% else %}
+                    sd
                     {% if user.is_authenticated %}
                         {% for comment in comments %}
                             <div class="comments">
