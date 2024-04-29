@@ -14,6 +14,7 @@ class PostList(View):
     def get(self, request, *args, **kwargs):
         queryset = Post.objects.filter(status=1).order_by("-created_on")
         context = {"posts": queryset}
+        print(context)
         return render(request, "blog/blog.html", context)
     
 
