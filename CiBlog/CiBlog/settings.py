@@ -54,8 +54,8 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'blog',
-]
 
+]
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "index"
 LOGOUT_REDIRECT_URL = "index"
