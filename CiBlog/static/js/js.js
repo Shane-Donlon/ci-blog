@@ -3,4 +3,7 @@ if (a) {
   console.log("a");
 }
 
+if (a) {
+  console.log("a");
+}
 // Path: CiBlog/static/js/js.js
