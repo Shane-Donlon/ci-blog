@@ -16,7 +16,8 @@
                                     {% if "placeholder" in post.featured_image.url %}
                                         <img src="testing/src" alt="" class="card-img-top">
                                     {% else %}
-                                        <img src="{{ post.featured_image.url }}" alt="" class="card-img-top">
+                                        <img src="{% static 'home/images/doughnut-top-min.png' %}"
+                                             alt="Top view of a doughnut with white glazing and orange glazing drizzled over it">
                                     {% endif %}
                                     <div class="image-flash">
                                         <p class="author">Written By: {{ post.author }}</p>
