@@ -61,4 +61,5 @@ class PostDetail(View):
 
 def testingView(request):
     context = {"request": request}
+    print(context)
     return render(request, "blog/testing.html", context)
