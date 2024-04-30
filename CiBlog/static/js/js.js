@@ -4,6 +4,6 @@ if (a) {
 }
 
 if (a) {
-  console.log("a");
+  console.log("b");
 }
 // Path: CiBlog/static/js/js.js
