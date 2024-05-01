@@ -16,6 +16,10 @@ class PostList(View):
         print(context)
         print(context)
         print(context)
+        print(context)
+        print(context)
+        print(context)
+        print(context)
         return render(request, "blog/blog.html", context)
     
 
