@@ -14,21 +14,23 @@
                             <div class="card mb-4">
                                 <div class="card-body">
                                     {% if "placeholder" in post.featured_image.url %}
-                                        <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg"
-                                             alt="person typing code on a laptop"
-                                             class="card-img-top">
+                                        <img src="testing/src" alt="" class="card-img-top">
                                     {% else %}
-                                        <img src="{{ post.featured_image.url }}" alt="" class="card-img-top">
+                                        <img src="{% static 'home/images/doughnut-top-min.png' %}" alt="">
                                     {% endif %}
                                     <div class="image-flash">
                                         <p class="author">Written By: {{ post.author }}</p>
                                     </div>
+                                    <a href=""></a>
+                                    <a href="#"></a>
+                                    <a href=""></a>
                                     <a href="{% url "post" post.slug %}">
                                         <h2 class"card-title">{{ post.title }}</h2>
                                         <p class="card-text text-muted h6">
                                             {{ post.created_on | date:"d/m/y G:i" }}
                                             <i class="far fa-heart">{{ post.likes }}</i>
                                         </p>
+                                        test
                                     </a>
                                 </div>
                             </div>
@@ -60,3 +62,15 @@
 {% block JSFiles %}
     <script src="{% static "blog/blog.js" %}"></script>
 {% endblock JSFiles %}
+sdsdfdsfsdfsdfsdf
+sdfsdf
+sdfassd
+sdftesting
+testsetsetste
+sdfsdfsdf
+sdfsdf
+test
+sdf
+test
+test
+sd

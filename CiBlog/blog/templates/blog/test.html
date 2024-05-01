@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head_title %}
+{% endblock head_title %}
+{% block extra_head %}
+{% endblock extra_head %}
+{% block body %}
+    {% if messages %}
+        <div>
+            <strong>{% trans "Messages:" %}</strong>
+            <ul>
+                {% for message in messages %}<li>{{ message }}</li>{% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    <div>
+        <strong>{% trans "Menu:" %}</strong>
+        <ul>
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'account_email' %}">{% trans "Change Email" %}</a>
+                </li>
+                <li>
+                    <a href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'account_login' %}">{% trans "Sign In" %}</a>
+                </li>
+                <li>
+                    <a href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+    <img src="" alt="">
+    {% block content %}
+    {% endblock content %}
+    {% block extra_body %}
+    {% endblock extra_body %}
+test
